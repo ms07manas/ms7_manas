@@ -620,6 +620,16 @@ window.onload = function () {
   document.getElementById("age").innerText = age;
 };
 
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // stop default navigation
+  fetch(this.action, {
+    method: this.method,
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    window.location.href = 'ty.html'; // redirect
+  });
+});
 </script>
 
 
